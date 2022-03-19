@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="external.css">
+        <title>Contact Me</title>
+    <style>
+
+    input[type=text], select, textarea,input[type=tel],input[type=email] {
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    float: left;
+    }
+
+    label {
+    width: 30%;    
+    padding: 5px 5px 5px 0;
+    display: inline-block;
+    }
+
+    .wrapper {
+    border-radius: 5px;
+    background-image: linear-gradient(to right, bisque , white);
+    }
+
+    .label {
+        float: left;
+        width: 30%;
+        height: 100%;
+        padding: 5px;
+        margin-left: 5%;
+    }
+
+    .input {
+        float: left;
+        width: 60%;
+        height: 100%;
+        padding: 5px;
+        }
+
+    .contactme {
+      position: absolute;
+      bottom: 10px;
+      right: 20%;
+      font-size: 120%;
+      color: crimson;
+    }
+    </style>
+    </head>
+    <body onload="init()">
+      <header>
+        <div class="container">
+            <img src="images/background/banner_contact_online.jpg" alt="Contact Form" style="width: 100%;height: 200px;">
+            <div class="contactme" style="width: 10%;" >Contact Me</div>
+        </div> 
+      </header>  
+
+     <main>
+        <nav>
+            <ul id="nav">
+              <li class="nav"><a href="#" onclick="history.back()">&#8249;</a></li>
+              <li class="nav"><a href="home.html">Home</a></li>
+              <li class="nav"><a href="aboutMe.html">About Me</a></li>
+              <li class="nav"><a href="resume.html">Resume</a></li>
+              <li class="nav"><a href="project.html">Previous Project</a></li>
+              <li class="nav"><a class="active" href="contactform.html">Contact Form</a></li>
+              <li class="nav"><a href="#" onclick="history.forward()">&#8250;</a></li>
+            </ul>
+        </nav>
+        <img id="emailImage" onmouseover="largeSized(this)" onmouseout="normalSized(this)" src="images/email.jpg" alt="emailImage" style="float: right;width:100px;height:100px;">
+        <div class="wrapper" style="width:80%;float: left;" >
+            <form enctype="text/plain" accept-charset="utf-8">
+                <div class="row">
+                    <div class="label">
+                        <label for="titleText">Title</label>
+                    </div>
+                    <div class="input">
+                        <select id="titleText" name="title" required="required">
+                            <option value="">Select</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Mrs">Mrs</option>
+                        </select>
+                    </div>
+                </div>    
+                <div class="row">
+                    <div class="label">
+                        <label for="fnameText">First Name</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="fnameText" name="firstname" placeholder="First Name" required="required">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="lnameText">Last Name</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="lnameText" name="lastname" placeholder="Last Name" required="required">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="emailText">Email Address</label>
+                    </div>
+                    <div class="input">
+                        <input type="email" id="emailText" name="email" placeholder="Email Address" required="required">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="telText">Phone Number</label>
+                    </div>
+                    <div class="input">
+                        <input type="tel" id="telText" name="tel" placeholder="Phone Number" required="required">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="subText">Subject</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="subText" name="subject" placeholder="Subject" required="required">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="bodyText">Message</label>
+                    </div>
+                    <div class="input">
+                        <textarea id="bodyText" name="msg" placeholder="Message" style="height:200px" required="required"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <input type="button" value="Send" onclick="checkRequired();" style="margin-left: 40%;" >
+                        <a id="mailTo"></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </main>
+        <script>
+            function largeSized(x) {
+              x.style.height = "200px";
+              x.style.width = "200px";
+            }
+            
+            function normalSized(x) {
+              x.style.height = "100px";
+              x.style.width = "100px";
+            }
+    
+        
+            var initSubject='',initBody='';
+
+            function checkRequired(){
+                if(document.getElementById("titleText").value == "" ||
+                 document.getElementById("fnameText").value == "" ||
+                 document.getElementById("lnameText").value == "" ||
+                 document.getElementById("emailText").value == "" ||
+                 document.getElementById("telText").value == "" ||
+                 document.getElementById("subText").value == "" ||
+                 document.getElementById("bodyText").value == ""
+                 ){
+                    alert("Please fill in all fields before submission");  
+                 }else{
+                    submitHandler();
+                 }                 
+            }
+
+            function submitHandler(){
+                    var to = "n01510500@humbermail.ca";
+                    var title = titleText.value;
+                    var fname = fnameText.value;
+                    var lname = lnameText.value;
+                    var email = emailText.value;
+                    var tel = telText.value;
+                    var subject = subText.value;
+            
+                    var body = ""+bodyText.value+'%0A%0A%0A';
+                        body += "From："+titleText.value+" "+fnameText.value+" "+lnameText.value+'%0A';
+                        body += "Email："+emailText.value+'%0A';
+                        body += "Tel："+telText.value;
+                    mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
+                    mailTo.click();
+                    }               
+                
+            function init(){
+                subText.value=initSubject;
+                toText.value=initTo;
+                bodyText.value=initBody;
+            }
+
+        </script>
+    </body>
+</html>

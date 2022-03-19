@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <title>Previous Project</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="external.css">
+        <style>
+                *{
+            margin:0;
+            padding:0;
+                }
+            #picBox{
+            margin: auto;
+            width:60%;
+                }
+            #pic{
+            border: 2px solid black;
+                }
+            #buttonBox{
+            width:150px;
+            margin: auto;
+            }    
+         
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="images/background/project_real_estate_background.jpg" alt="Real Estate Project" style="width: 100%;height: 200px;">
+        </header>
+        <nav>
+            <ul id="nav">
+                <li class="nav"><a href="#" onclick="history.back()">&#8249;</a></li>
+                <li class="nav"><a href="home.html">Home</a></li>               
+                <li class="nav"><a href="aboutMe.html">About Me</a></li>
+                <li class="nav"><a href="resume.html">Resume</a></li>               
+                <li class="nav"><a class="active" href="project.html">Previous Project</a></li>
+                <li class="nav"><a href="contactform.html">Contact Form</a></li>
+                <li class="nav"><a href="#" onclick="history.forward()">&#8250;</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="column1" style="width:30%;height: 670px;padding:20px;background-image: linear-gradient( #dd9f41,#21c07e);">
+                <p><b>
+                    This report was a group project that I did a few years ago. 
+                    It looked into the root causes of the prosperity of real estate market in Mainland China.
+                    Some reasons that could be quantified were identified using fundamental economic theories and some statistical techniques.
+                    For those who were qualitative, we referred to a number of theses to support our ideas.
+                    Apart from the identification of the reasons, we also attempted to provide some recommendations as mitigation to the overheated market.
+                </b></p><br>
+                <div id="buttonBox">
+                    <input type="button" value="Previous" onclick="pre();">
+                    <input type="button" value="Next" onclick="next();">
+                </div>               
+            </div>
+            <div class="column2" style="height: 680px; width: 70%;">
+                <div id="picBox">
+                    <img src="images/previous_project/4491/page1.jpg" id="pic" alt="report_4491" style="width: 80%;height:80%;">      
+                </div>
+
+            </div>   
+        </main>
+        <script>
+            var picArr=new Array("images/previous_project/4491/page1.jpg",
+            "images/previous_project/4491/page2.jpg",
+            "images/previous_project/4491/page3.jpg",
+            "images/previous_project/4491/page4.jpg",
+            "images/previous_project/4491/page5.jpg",
+            "images/previous_project/4491/page6.jpg",
+            "images/previous_project/4491/page7.jpg",
+            "images/previous_project/4491/page8.jpg",
+            "images/previous_project/4491/page9.jpg",
+            "images/previous_project/4491/page10.jpg",
+            "images/previous_project/4491/page11.jpg",
+            "images/previous_project/4491/page12.jpg",
+            "images/previous_project/4491/page13.jpg",
+            "images/previous_project/4491/page14.jpg",
+            "images/previous_project/4491/page15.jpg",
+            "images/previous_project/4491/page16.jpg",
+            "images/previous_project/4491/page17.jpg",
+            "images/previous_project/4491/page18.jpg");
+     
+        
+
+
+        var index=0;
+        function next(){
+                index++;
+        if(index==picArr.length){
+                    index=0;
+                }
+        document.getElementById("pic").src=picArr[index];
+            }
+        function pre(){
+                index--;
+        if(index<0){
+                    index=picArr.length-1;
+                }
+        document.getElementById("pic").src=picArr[index];
+            }
+        </script>
+    </body>
+</html>
+        

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>           
+        <title>Homepage</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="external.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            
+            .column {
+            float: left;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+            }
+
+            .left, .right {
+            width: 20%;
+            height:442px;
+            background-image: url(images/background/homepage_background_s.png);
+            background-size: 100% 442px;
+            background-repeat: no-repeat;
+            }
+
+            .middle {
+            width: 60%;
+            height: 100%;
+            background-image: radial-gradient(white,rgb(75, 71, 71));
+            }
+
+        </style>
+    </head>
+
+
+    <body>
+        <header>
+            <img src="images/background/homepage_background_img.jpg" alt="homepage_background_img" style="width:100%;height: 200px;">
+        </header>
+
+        <nav>
+            <ul id="nav">
+                <li class="nav"><a href="#" onclick="history.back()">&#8249;</a></li>
+                <li class="nav"><a class="active" href="home.html">Home</a></li>
+                <li class="nav"><a href="aboutMe.html">About Me</a></li>
+                <li class="nav"><a href="resume.html">Resume</a></li>
+                <li class="nav"><a href="project.html">Previous Project</a></li>
+                <li class="nav"><a href="contactform.html">Contact Form</a></li>
+                <li class="nav"><a href="#" onclick="history.forward()">&#8250;</a></li>
+            </ul>
+    
+        </nav>
+
+        <hr>
+        <main>
+            <div class="row">
+                <div class="column left">
+
+                </div>
+                <div class="column middle">
+                    <div style="line-height: 30px; ">
+                        <dl>
+                            <dt><strong>Welcome!</strong></dt>
+                                <dd>
+                                    Thank you for reviewing my portfolio. I am a current student studying computer programming at Humber College in Toronto, Canada.
+                                </dd>
+                            <dt><strong>Background</strong></dt>   
+                                <dd>
+                                    Before attending at Humber College, I obtained my bachelor degree in my home city and worked for a couple of years in banking industry.
+                                    My previous work required me to involve a number of aspects including trading, credit analysis and coding. Handling the enormous amount
+                                    of work enabled me to understand what role programming skills could play in our real life and how it could make our tasks easier.
+                                    Therefore, I decided to further my study in programming.
+                                </dd>
+                            <dt><strong>Career Goals</strong></dt>
+                                <dd>
+                                    The exposure I gained in the previous work experience allowed me to gain a more thorough understanding of the industry
+                                    and also inspired me how programming skills would be helpful in handling a great deal of data and making decisions.
+                                    I would like to apply the techniques I will acquire to my job in the future so that I could provide a more logical advice 
+                                    in a fast-paced environment and be able to identify new trading opportunities.
+                                </dd>
+                        </dl>
+                    </div>    
+                </div>
+                <div class="column right">
+
+                </div>
+              </div>
+        </main>
+    </body>
+</html>    
